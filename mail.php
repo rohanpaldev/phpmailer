@@ -6,14 +6,28 @@ require_once 'Exception.php';
 require_once 'PHPMailer.php';
 require_once 'SMTP.php';
 $mail = new PHPMailer(true);
-$name="";
+$username="";
+$password="";
+$address="";
+$option ="";
+$contact="";
 $email="";
-$massage="";
+$date="";
+$time="";
+$skype="";
+$insta="";
 
 if (isset($_POST['submit'])){
-    $name = $_POST['name'];
+       $username = $_POST['username'];
+    $password = $_POST['password'];
+    $option = $_POST['option'];
+    $address = $_POST['address'];
+    $contact = $_POST['contact'];
     $email = $_POST['email'];
-    $massage = $_POST['massage'];
+    $skype = $_POST['skypeId'];
+    $insta = $_POST['insta'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
     try {
         //Server settings
         //Enable verbose debug output
@@ -40,7 +54,7 @@ if (isset($_POST['submit'])){
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Test Email';
-        $mail->Body    = $name ."<br>" . $email."<br>".$massage;
+        $mail->Body    = $username ."<br>" . $password."<br>".$contact."<br>" . $option."<br>".$address."<br>" . $contact."<br>".$email."<br>" . $skype."<br>".$insta."<br>" . $date."<br>".$time;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         // $mail->AddAddress($name, $email, $massage);
     
