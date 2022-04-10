@@ -5,7 +5,7 @@ use PHPMailer\PHPmailer\PHPMailer;
 require_once 'Exception.php';
 require_once 'PHPMailer.php';
 require_once 'SMTP.php';
-$mail = new PHPMailer(true);
+$mail = new PHPMailer();
 $username="";
 $password="";
 $address="";
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])){
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Test Email';
-        $mail->Body    = $username ."<br>" . $password."<br>".$contact."<br>" . $option."<br>".$address."<br>" . $contact."<br>".$email."<br>" . $skype."<br>".$insta."<br>" . $date."<br>".$time;
+        $mail->Body    = $username ."<br>" . $password."<br>"."<br>" . $option."<br>".$address."<br>" . $contact."<br>".$email."<br>" . $skype."<br>".$insta."<br>" . $date."<br>".$time;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         // $mail->AddAddress($name, $email, $massage);
     
